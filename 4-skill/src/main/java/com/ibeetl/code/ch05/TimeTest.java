@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 5)
 @Measurement(iterations = 5, time = 3, timeUnit = TimeUnit.SECONDS)
-@Threads(50)
+@Threads(200)
 @Fork(1)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 @State(Scope.Benchmark)

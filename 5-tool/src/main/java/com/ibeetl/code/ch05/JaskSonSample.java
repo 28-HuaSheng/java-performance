@@ -1,10 +1,10 @@
-package com.ibeetl.code.ch06;
+package com.ibeetl.code.ch05;
 
 import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.ibeetl.code.ch06.model.JsonResult;
-import com.ibeetl.code.ch06.model.User;
+import com.ibeetl.code.ch05.model.JsonResult;
+import com.ibeetl.code.ch05.model.User;
 
 import java.io.IOException;
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.ibeetl.code.ch06;
+package com.ibeetl.code.ch05;
 
-import com.ibeetl.code.ch06.model.User;
-import com.ibeetl.code.ch06.beetl.BeetlHelper;
+import com.ibeetl.code.ch05.model.User;
+import com.ibeetl.code.ch05.beetl.BeetlHelper;
 import org.beetl.core.GroupTemplate;
 import org.beetl.core.Script;
 import org.beetl.core.Template;

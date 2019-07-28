@@ -1,4 +1,4 @@
-package com.ibeetl.code.ch06.model;
+package com.ibeetl.code.ch05.model;
 
 public class JsonResult {
   boolean success;

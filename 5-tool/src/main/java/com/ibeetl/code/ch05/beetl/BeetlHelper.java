@@ -1,6 +1,6 @@
-package com.ibeetl.code.ch06.beetl;
+package com.ibeetl.code.ch05.beetl;
 
-import com.ibeetl.code.ch06.model.User;
+import com.ibeetl.code.ch05.model.User;
 import org.beetl.core.Configuration;
 import org.beetl.core.GroupTemplate;
 import org.beetl.core.engine.DefaultTemplateEngine;

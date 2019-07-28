@@ -1,6 +1,4 @@
-package com.ibeetl.code.ch06.model;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package com.ibeetl.code.ch05.model;
 
 import java.util.Date;
 public class User implements  java.io.Serializable{

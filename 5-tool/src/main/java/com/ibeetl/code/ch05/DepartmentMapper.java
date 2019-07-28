@@ -1,7 +1,7 @@
-package com.ibeetl.code.ch06;
+package com.ibeetl.code.ch05;
 
-import com.ibeetl.code.ch06.model.Department;
-import com.ibeetl.code.ch06.model.User;
+import com.ibeetl.code.ch05.model.Department;
+import com.ibeetl.code.ch05.model.User;
 import fr.xebia.extras.selma.Mapper;
 
 @Mapper(withCustom = UserCustomMapper.class)

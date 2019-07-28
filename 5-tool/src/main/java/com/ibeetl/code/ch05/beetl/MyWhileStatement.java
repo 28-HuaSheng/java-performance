@@ -1,4 +1,4 @@
-package com.ibeetl.code.ch06.beetl;
+package com.ibeetl.code.ch05.beetl;
 
 import org.beetl.core.Context;
 import org.beetl.core.exception.BeetlException;
