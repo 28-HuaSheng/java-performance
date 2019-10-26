@@ -1,7 +1,8 @@
 package com.ibeetl.code.ch03;
 
 /**
- * 线程死锁,运行后观察线程状态
+ * 线程死锁,运行后观察线程状态，运行后，通过jvisualvm观察
+ * @author xiandafu ,公众号 java系统优化
  */
 public class ThreadDeadTest {
 

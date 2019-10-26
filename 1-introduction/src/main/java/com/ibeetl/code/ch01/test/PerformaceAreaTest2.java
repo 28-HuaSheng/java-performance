@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 传统性能测试方法，有很多问题，书中已经做了说明，你仍然可以运行看看那，通过
  * jvisualvm的cpu采样，观察性能明细
- * @author xiandafu
+ * @author xiandafu ,公众号 java系统优化
  */
 public class PerformaceAreaTest2 {
     static AreaService areaService = new AreaService();

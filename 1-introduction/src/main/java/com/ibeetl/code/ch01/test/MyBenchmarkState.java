@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 解释{@code  @State}用法，并发测试必须用上
- * @author xiandafu
+ * @author xiandafu ,公众号 java系统优化
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 3)

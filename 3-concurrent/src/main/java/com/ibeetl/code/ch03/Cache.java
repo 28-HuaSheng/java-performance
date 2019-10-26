@@ -5,6 +5,11 @@ import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+/**
+ * 一个简单的cache例子，不过，既没有容量限制，过期设置，更没有热点缓存！
+ * @author xiandafu ,公众号 java系统优化
+ * @param <T>
+ */
 class Cache<T> {
 	private final Map<String, T> m = new HashMap<String, T>();
 	private final ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();

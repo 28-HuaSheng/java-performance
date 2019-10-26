@@ -8,6 +8,10 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 了解一下构造String的代码，分布式&微服务系统里，通过byte[] 构造String占了消耗的大量CPU
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)

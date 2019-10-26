@@ -12,6 +12,10 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 字符串分割
+ * @author xiandafu 
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)

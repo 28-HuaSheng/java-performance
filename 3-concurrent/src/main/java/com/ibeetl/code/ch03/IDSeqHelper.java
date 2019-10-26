@@ -2,6 +2,10 @@ package com.ibeetl.code.ch03;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 演示了不加锁操作的计数{@code IDSeqHelper}会出现各种问题，
+ * @author xiandafu ,公众号 java系统优化
+ */
 public class IDSeqHelper {
 	static  int a = 0;
   public   static int add(){
@@ -10,6 +14,9 @@ public class IDSeqHelper {
   }
 
   public static void main(String[] args){
+	  /**
+	   * 俩个并发线程
+	   */
 	  CountThread aThread =  new CountThread("a");
 	  CountThread bThread =  new CountThread("b");
 	  aThread.start();

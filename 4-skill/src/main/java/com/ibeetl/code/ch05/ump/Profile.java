@@ -27,5 +27,9 @@ public class Profile {
 
   }
 
+  public static  void init(){
+	  countMap.clear();
+  }
+
 
 }

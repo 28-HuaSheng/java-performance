@@ -4,6 +4,10 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 一个简单使用实例
+ * @author xiandafu ,公众号 java系统优化
+ */
 public class FutureTaskTest {
   public static void main(String[] args) throws Exception{
     int a=10;

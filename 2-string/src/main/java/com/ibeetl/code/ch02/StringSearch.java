@@ -9,6 +9,10 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
+/**
+ * 字符串搜索演示，当然，还有很多第三方库，比如apache common lang也不错
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)

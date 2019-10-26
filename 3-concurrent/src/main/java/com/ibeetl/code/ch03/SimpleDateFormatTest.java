@@ -5,6 +5,7 @@ import java.util.Date;
 
 /**
  * SimpleDateFormat 非线程安全类
+ * @author xiandafu ,公众号 java系统优化
  */
 public class SimpleDateFormatTest {
 
@@ -40,6 +41,7 @@ public class SimpleDateFormatTest {
       while(true){
         String str = CommonUtil.format(date);
         if(!str.equals(expected)){
+          //线程非安全
           System.out.println(this.getName()+" expected "+expected+" return "+str );
         }
       }

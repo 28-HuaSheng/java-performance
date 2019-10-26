@@ -7,6 +7,10 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * synchronzied 最好别采用，使用并发包下提供的lock或者其他类
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 10)
 @Measurement(iterations = 10, time = 1, timeUnit = TimeUnit.MILLISECONDS)

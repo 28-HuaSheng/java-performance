@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 第一章关键例子，测试俩种不同构造区域数据的性能对比
- * @author xiandafu
+ * @author xiandafu ,公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 3)

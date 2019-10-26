@@ -11,6 +11,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ *  前缀树过滤,一个好的算法提升性能关键，互联网关键字有上万，前缀树的性能表现非常好
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
@@ -23,9 +27,9 @@ public class KeywordsFilterTest {
   static String str = "你好，小狗，小猫，今天天气真的很好";
   static List<String> keys = Arrays.asList("猪狗","小狗","小猫","小鸭","小鸡","小鹅");
   KeywordSearch tree;
+
   @Benchmark
   public String  tree(){
-
 	  return tree.filter(str);
 
   }
@@ -50,10 +54,6 @@ public class KeywordsFilterTest {
 
   public static void main(String[] args) throws RunnerException {
 
-//  	KeywordsFilterTest test = new KeywordsFilterTest();
-//  	test.init();
-//  	System.out.println(test.tree());
-//  	System.out.println(test.replace());
 
     Options opt = new OptionsBuilder()
       .include(KeywordsFilterTest.class.getSimpleName())

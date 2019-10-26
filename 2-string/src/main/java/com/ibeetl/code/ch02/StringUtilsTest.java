@@ -7,8 +7,13 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 第三方工具不错啊
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
@@ -35,8 +40,6 @@ public class StringUtilsTest {
   }
 
   public static void main(String[] args) throws RunnerException {
-
-
 
     Options opt = new OptionsBuilder()
       .include(StringUtilsTest.class.getSimpleName())

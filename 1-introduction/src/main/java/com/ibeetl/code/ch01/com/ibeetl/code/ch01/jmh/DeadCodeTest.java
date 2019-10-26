@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * baseline空方法能有效验证写的jmh是否正确
- * @author xiandafu
+ * @author xiandafu ,公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 3)

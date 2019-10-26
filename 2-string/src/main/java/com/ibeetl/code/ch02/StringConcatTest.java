@@ -8,6 +8,11 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 一个颠覆很多人看法的测试，+ 拼接字符串居然最快。如果使用StringBuilder，符合使用方式，也能非常快。
+ * 否则，就慢不少了。
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
@@ -28,8 +33,10 @@ public class StringConcatTest {
 
   }
 
+
   @Benchmark
   public String concatbyOptimizeBuilder(){
+  	//同 #concat()
     String c = new StringBuilder().append(a).append(b).append(e).toString();
     return c;
   }
@@ -47,6 +54,7 @@ public class StringConcatTest {
 
   @Benchmark
   public String concatbyBuffer(){
+  	//不会优化，性能同#concatbyBuilder()差不多,尽管用锁，但锁消除了
     StringBuffer sb = new StringBuffer();
     sb.append(a);
     sb.append(b);

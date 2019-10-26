@@ -9,6 +9,10 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.text.MessageFormat;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 格式化字符串也是系统常用功能，总能在系统调优过程看到此类消耗
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)

@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 强调，用字符串构造对象，晦涩难懂，而且，性能还很差
- * @author xiandafu 
+ * @author xiandafu ,公众号 java系统优化
  */
 public class PerformaceKeyTest {
 

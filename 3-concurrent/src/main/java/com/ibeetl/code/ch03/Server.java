@@ -3,6 +3,10 @@ package com.ibeetl.code.ch03;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * CountDownLatch使用例子
+ * @author xiandafu ,公众号 java系统优化
+ */
 public class Server {
 	enum Status{NOMARL,ERROR}
 	ConcurrentHashMap<String,Status> status = new ConcurrentHashMap<>();

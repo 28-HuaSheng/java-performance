@@ -40,5 +40,14 @@ public class Profile2 {
 
   }
 
+	public static  void init(){
+
+		countMap = new ConcurrentHashMap<>();
+		counts = new AtomicInteger[MAX];
+		for(int i=0;i<MAX;i++){
+			counts[i] = new  AtomicInteger();
+		}
+	}
+
 
 }

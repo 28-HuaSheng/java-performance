@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 内联测试，猜一猜，哪个快
- * @author xiandafu 
+ * @author xiandafu ,公众号 java系统优化
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 10)

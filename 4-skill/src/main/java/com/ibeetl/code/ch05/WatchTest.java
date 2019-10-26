@@ -2,6 +2,7 @@ package com.ibeetl.code.ch05;
 
 import com.ibeetl.code.ch05.ump.Profile;
 import com.ibeetl.code.ch05.ump.Profile2;
+import com.ibeetl.code.ch05.ump.Profile3;
 import com.ibeetl.code.ch05.ump.Watch;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
@@ -12,12 +13,12 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
-@BenchmarkMode(Mode.Throughput)
-@Warmup()
-@Measurement()
-@Threads(10)
+@BenchmarkMode(Mode.AverageTime)
+@Warmup(iterations = 5)
+@Measurement(iterations = 5, time = 5, timeUnit = TimeUnit.SECONDS)
+@Threads(2)
 @Fork(1)
-@OutputTimeUnit(TimeUnit.MILLISECONDS)
+@OutputTimeUnit(TimeUnit.NANOSECONDS)
 @State(Scope.Benchmark)
 public class WatchTest {
 
@@ -34,14 +35,19 @@ public class WatchTest {
   }
 
   @Benchmark
-  public void better(){
-    Profile2.addWatch(watch1);
-    Profile2.addWatch(watch2);
-    Profile2.addWatch(watch3);
-  }
+	public void better(){
+		Profile2.addWatch(watch1);
+		Profile2.addWatch(watch2);
+		Profile2.addWatch(watch3);
+	}
+	@Benchmark
+	public void better2(){
+		Profile3.addWatch(watch1);
+		Profile3.addWatch(watch2);
+		Profile3.addWatch(watch3);
+	}
 
-
-  @Setup
+  @Setup(Level.Iteration)
   public void initWatch(){
     watch1 = Watch.instance("order");
     sleep(1);
@@ -58,6 +64,9 @@ public class WatchTest {
 
     watch1.endWatch();
 
+	  Profile.init();
+	  Profile2.init();
+	  Profile3.init();
   }
 
   private void sleep(int time){

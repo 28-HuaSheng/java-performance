@@ -8,6 +8,11 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 演示了一个过时的intern方法，intern本意用来节约内存，复用字符串，但性能呢很慢，
+ * JDK 提供了新的复用字符串的办法
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)

@@ -9,6 +9,11 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
+/**
+ * 替换，正则替换并不慢，主要是因为替换后，需要生成新的字符串，这个会慢。哈哈
+ * @author xiandafu ,公众号 java系统优化
+ *
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)

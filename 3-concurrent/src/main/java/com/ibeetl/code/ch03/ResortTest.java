@@ -2,6 +2,7 @@ package com.ibeetl.code.ch03;
 
 /**
  * 模拟百万分之一情况下出现的重排序可能
+ * @author xiandafu ,公众号 java系统优化
  */
 public class ResortTest {
 
@@ -30,6 +31,7 @@ public class ResortTest {
       threadA.join();
       threadB.join();
       if(x==0&&y==0){
+      	//重排序会出现这种情况
         System.out.println(index+"="+x+""+y);
       }
 

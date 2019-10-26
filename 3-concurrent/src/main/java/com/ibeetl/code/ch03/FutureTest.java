@@ -13,6 +13,9 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+/** 异步编程的编排实例
+ * @author xiandafu ,公众号 java系统优化
+ */
 public class FutureTest {
   static ThreadPoolExecutor pool = PoolManager.instance().getQueryPool().getCustomThreadPoolExecutor();
   public static void main(String[] args) throws Exception{

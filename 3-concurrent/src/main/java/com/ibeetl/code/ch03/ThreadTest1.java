@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * jstate 观察线程栈
+ * jstack 观察线程栈
  */
 public class ThreadTest1 {
   static int max = 10;
