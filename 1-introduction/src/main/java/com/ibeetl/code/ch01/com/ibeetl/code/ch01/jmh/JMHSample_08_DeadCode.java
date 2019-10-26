@@ -8,6 +8,11 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 这是官网提供的deadcode演示，我把关键英语翻译了一下
+ * @author xiandafu
+ * @see  http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/
+ */
 @State(Scope.Thread)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
@@ -29,18 +34,18 @@ public class JMHSample_08_DeadCode {
 
   @Benchmark
   public void baseline() {
-    // do nothing, this is a baseline
+    // 基准，什么都不做，如果其他方法跟这个性能一样，那说明其他测试方法写错了
   }
 
   @Benchmark
   public void measureWrong() {
-    // This is wrong: result is not used and the entire computation is optimized away.
+    //错误测试
     Math.log(x);
   }
 
   @Benchmark
   public double measureRight() {
-    // This is correct: the result is being used.
+    // 正确测试
     return Math.log(x);
   }
 

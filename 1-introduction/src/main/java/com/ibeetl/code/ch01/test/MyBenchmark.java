@@ -12,6 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 第一章关键例子，测试俩种不同构造区域数据的性能对比
+ * @author xiandafu
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 3)
 @Measurement(iterations = 3, time = 5, timeUnit = TimeUnit.SECONDS)
@@ -21,6 +25,7 @@ import java.util.concurrent.TimeUnit;
 public class MyBenchmark {
     static AreaService areaService = new AreaService();
     static PreferAreaService perferAreaService = new PreferAreaService();
+    //输入数据
     static List<Area> data = buildData(20);
 
     @Benchmark

@@ -7,7 +7,11 @@ import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
-
+/**
+ * 这是官网提供的不要在jmh里用上循环，因为jit会优化循环，我把关键英语翻译了一下
+ * @author xiandafu
+ * @see  http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/
+ */
 @State(Scope.Thread)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
@@ -32,7 +36,7 @@ public class JMHSample_11_Loops {
   int y = 2;
 
   /*
-   * This is what you do with JMH.
+   * 正确做法
    */
 
   @Benchmark
@@ -41,8 +45,8 @@ public class JMHSample_11_Loops {
   }
 
   /*
-   * The following tests emulate the naive looping.
-   * This is the Caliper-style benchmark.
+   * 错误的做法，看看后面的measureWrong_xxx就知道了
+   *
    */
   private int reps(int reps) {
     int s = 0;
@@ -53,8 +57,8 @@ public class JMHSample_11_Loops {
   }
 
   /*
-   * We would like to measure this with different repetitions count.
-   * Special annotation is used to get the individual operation cost.
+   * 循环不同次数，得出来的reps平均的性能是不一样的
+   *
    */
 
   @Benchmark

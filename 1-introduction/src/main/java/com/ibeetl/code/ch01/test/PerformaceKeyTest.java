@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 强调，用字符串构造对象，晦涩难懂，而且，性能还很差
+ * @author xiandafu 
+ */
 public class PerformaceKeyTest {
 
 

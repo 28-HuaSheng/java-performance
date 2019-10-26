@@ -3,6 +3,9 @@ package com.ibeetl.code.ch01.com.ibeetl.code.ch01.jmh;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * 所有的jmh测试，都应该写一个单元测试，保证功能正确先
+ */
 public class InLineTestJunit {
   @Test
   public void test(){

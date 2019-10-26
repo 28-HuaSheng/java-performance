@@ -12,6 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 解释{@code  @State}用法，并发测试必须用上
+ * @author xiandafu
+ */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 3)
 @Measurement(iterations = 3, time = 5, timeUnit = TimeUnit.SECONDS)

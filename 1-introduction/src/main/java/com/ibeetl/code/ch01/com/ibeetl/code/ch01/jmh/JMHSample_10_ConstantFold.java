@@ -7,7 +7,11 @@ import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
-
+/**
+ * 这是官网提供的常量折叠演示，我把关键英语翻译了一下
+ * @author xiandafu
+ * @see  http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/
+ */
 @State(Scope.Thread)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
@@ -35,25 +39,25 @@ public class JMHSample_10_ConstantFold {
 
   @Benchmark
   public double baseline() {
-    // simply return the value, this is a baseline
+    // 基准测试，如果其他jmh方法性能跟这个一样，那么就说明那些jmh犯法写错了
     return Math.PI;
   }
 
   @Benchmark
   public double measureWrong_1() {
-    // This is wrong: the source is predictable, and computation is foldable.
+    // 错误的测试，jvm不需要计算，直接返回
     return Math.log(Math.PI);
   }
 
   @Benchmark
   public double measureWrong_2() {
-    // This is wrong: the source is predictable, and computation is foldable.
+    // 还是错误的测试，wrongX是常量，可以预测结果
     return Math.log(wrongX);
   }
 
   @Benchmark
   public double measureRight() {
-    // This is correct: the source is not predictable.
+    // 正确测试.
     return Math.log(x);
   }
 

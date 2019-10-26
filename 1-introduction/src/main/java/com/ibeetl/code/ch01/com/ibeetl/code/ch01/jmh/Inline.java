@@ -8,7 +8,11 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
-@BenchmarkMode(Mode.SampleTime)
+/**
+ * 内联测试，猜一猜，哪个快
+ * @author xiandafu 
+ */
+@BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 10)
 @Measurement(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
 @Threads(1)
@@ -44,7 +48,7 @@ public class Inline {
 
   public static void main(String[] args) throws RunnerException {
     Options opt = new OptionsBuilder()
-      .include(Inline.class.getSimpleName()+".*addInline*")
+      .include(Inline.class.getSimpleName()+".*add*")
       .build();
     new Runner(opt).run();
   }

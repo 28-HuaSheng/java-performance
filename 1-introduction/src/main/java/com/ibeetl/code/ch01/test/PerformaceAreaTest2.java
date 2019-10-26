@@ -8,6 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 传统性能测试方法，有很多问题，书中已经做了说明，你仍然可以运行看看那，通过
+ * jvisualvm的cpu采样，观察性能明细
+ * @author xiandafu
+ */
 public class PerformaceAreaTest2 {
     static AreaService areaService = new AreaService();
     static PreferAreaService perferAreaService = new PreferAreaService();

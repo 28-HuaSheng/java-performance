@@ -9,6 +9,10 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * baseline空方法能有效验证写的jmh是否正确
+ * @author xiandafu
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 3)
 @Measurement(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
