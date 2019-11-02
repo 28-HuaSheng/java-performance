@@ -10,6 +10,10 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 使用随机数的正确姿势，Random虽然是线程安全，但不如ThreadLocalRandom
+ * @author xiandafu ,公众号 java系统优化
+ */
 
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 5)

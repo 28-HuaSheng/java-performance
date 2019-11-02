@@ -11,6 +11,13 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 压缩耗时测试。需要注意，压缩性能很好，但耗CPU。
+ *
+ * apache compress 提供更多的压缩，但性能上大部分差不多。
+ *
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)

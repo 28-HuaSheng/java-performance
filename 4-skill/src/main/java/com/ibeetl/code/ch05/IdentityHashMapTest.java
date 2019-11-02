@@ -2,6 +2,10 @@ package com.ibeetl.code.ch05;
 
 import java.util.IdentityHashMap;
 
+/**
+ * 演示IdentityHashMap使用，避免计算hash
+ * @author xiandafu ,公众号 java系统优化
+ */
 public class IdentityHashMapTest {
   public static void main(String[] args){
     IdentityHashMap<String,Object> map =new IdentityHashMap<>();

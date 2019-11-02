@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * if和switch较多分支，需要比较13次，性能测试
+ * @author xiandafu ,公众号 java系统优化
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 5)

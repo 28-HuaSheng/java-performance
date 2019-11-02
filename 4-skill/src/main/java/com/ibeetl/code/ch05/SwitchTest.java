@@ -7,7 +7,10 @@ import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
-
+/**
+ * swtich 和 ifelse，包含了lookup 和 tableswitch，还有ifelse
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 5)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)

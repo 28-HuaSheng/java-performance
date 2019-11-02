@@ -7,7 +7,11 @@ import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
-
+/**
+ * 循环合并，创建for循环耗时，for循环过多也耗时，可以避免for循环（比如为空，或者集合只有一个元素）
+ * 或者合并循环
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)

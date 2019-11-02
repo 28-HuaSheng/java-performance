@@ -10,7 +10,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
+/**
+ * 一个简单的例子，这种优化很常用
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 5)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
@@ -52,6 +55,7 @@ public class PreHandleTest {
     new Runner(opt).run();
   }
 
+
   static  class ServiceConfig{
     String black = null;
     public ServiceConfig(String black){
@@ -63,7 +67,10 @@ public class PreHandleTest {
       }
   }
 
-  static  class NewServiceConfig{
+	/**
+	 * 一次初始化好，方便后续查询
+	 */
+	static  class NewServiceConfig{
     String black = null;
     Set<String> blackSet = new HashSet<>();
     public NewServiceConfig(String black){

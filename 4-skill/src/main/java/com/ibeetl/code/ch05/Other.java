@@ -1,7 +1,10 @@
 package com.ibeetl.code.ch05;
 
 import java.util.Random;
-
+/**
+ * 非性能相关，验证随机式不随机
+ * @author xiandafu ,公众号 java系统优化
+ */
 public class Other {
 	public void test(){
 		String name1 ="hi";

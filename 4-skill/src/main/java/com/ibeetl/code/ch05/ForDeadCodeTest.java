@@ -10,7 +10,8 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 如果注释hole.consume(i);则性能一样
+ * 关于一个过时优化：“嵌套循环外小内大性能好“，起始都一样，用hole.consume可以验证
+ * @author xiandafu ,公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 5)
@@ -51,6 +52,11 @@ public class ForDeadCodeTest {
 		return endTime-startTime+i+j;
 	}
 
+	/**
+	 * 上面的测试，如果不用hole.consume，那么性能跟base一样，JIT优化了
+	 * @param hole
+	 * @return
+	 */
 	@Benchmark
 	public long base(Blackhole hole) {
 		long startTime = System.nanoTime();

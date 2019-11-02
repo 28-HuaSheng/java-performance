@@ -14,6 +14,10 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 格式化例子，预编译能获得最好的性能
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 10)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)

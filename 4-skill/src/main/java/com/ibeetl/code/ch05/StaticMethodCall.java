@@ -8,7 +8,10 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
-
+/**
+ * 静态方法调用省去了虚方法查找，性能好
+ * @author xiandafu ,公众号 java系统优化
+ */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 5)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
