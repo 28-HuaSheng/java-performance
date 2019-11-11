@@ -11,8 +11,8 @@ import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 第三方工具不错啊
- * @author xiandafu ,公众号 java系统优化
+ * 第三方工具不错,多使用大厂的工具
+ * @author xiandafu@126.com ,公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

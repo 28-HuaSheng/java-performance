@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  * SimpleDateFormat 非线程安全类
- * @author xiandafu ,公众号 java系统优化
+ * @author xiandafu@126.com ,公众号 java系统优化
  */
 public class SimpleDateFormatTest {
 

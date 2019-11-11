@@ -10,9 +10,9 @@ import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
 
 /**
- * BigDecimal 是电商，金融等行业必备数据，避免了double得不精确性，
+ * BigDecimal 是电商，金融等行业必备数据类型，避免了double得不精确性，
  * Long在一定程度上可以代替BigDecimal运算，本例演示了long和bigdecimal的性能
- * @author xiandafu ,公众号 java系统优化
+ * @author xiandafu@126.com ,公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

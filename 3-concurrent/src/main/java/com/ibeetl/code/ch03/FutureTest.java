@@ -14,7 +14,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 /** 异步编程的编排实例
- * @author xiandafu ,公众号 java系统优化
+ * @author xiandafu@126.com ,公众号 java系统优化
  */
 public class FutureTest {
   static ThreadPoolExecutor pool = PoolManager.instance().getQueryPool().getCustomThreadPoolExecutor();

@@ -7,7 +7,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 /**
  * 一个简单使用实例，必须注意，线程池是宝贵资源，必须统一管理（或者像spring那样统一配置）
- * @author xiandafu ,公众号 java系统优化
+ * @author xiandafu@126.com ,公众号 java系统优化
  */
 public class FutureTaskTest2 {
 	public static void main(String[] args) throws Exception {

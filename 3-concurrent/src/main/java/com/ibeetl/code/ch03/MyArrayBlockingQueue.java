@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /** Condition使用示例，参考
  * https://blog.csdn.net/SEU_Calvin/article/details/70211712
- * @author xiandafu ,公众号 java系统优化
+ * @author xiandafu@126.com ,公众号 java系统优化
  * @param <T>
  */
 public class MyArrayBlockingQueue<T> {

@@ -2,7 +2,7 @@ package com.ibeetl.code.ch03;
 
 /**
  * 模拟百万分之一情况下出现的重排序可能
- * @author xiandafu ,公众号 java系统优化
+ * @author xiandafu@126.com ,公众号 java系统优化
  */
 public class ResortTest {
 

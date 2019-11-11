@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 格式化字符串也是系统常用功能，总能在系统调优过程看到此类消耗
- * @author xiandafu ,公众号 java系统优化
+ * @author xiandafu@126.com ,公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

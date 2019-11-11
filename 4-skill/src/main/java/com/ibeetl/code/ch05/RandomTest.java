@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 使用随机数的正确姿势，Random虽然是线程安全，但不如ThreadLocalRandom
- * @author xiandafu ,公众号 java系统优化
+ * @author xiandafu@126.com ,公众号 java系统优化
  */
 
 @BenchmarkMode(Mode.AverageTime)

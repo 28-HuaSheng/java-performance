@@ -1,6 +1,5 @@
 package com.ibeetl.code.ch05;
 
-import org.omg.PortableInterceptor.SUCCESSFUL;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
@@ -13,7 +12,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 /**
  * EnumMap 演示
- * @author xiandafu ,公众号 java系统优化
+ * @author xiandafu@126.com ,公众号 java系统优化
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 3)

@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * CountDownLatch使用例子
- * @author xiandafu ,公众号 java系统优化
+ * @author xiandafu@126.com ,公众号 java系统优化
  */
 public class Server {
 	enum Status{NOMARL,ERROR}

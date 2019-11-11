@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  *  前缀树过滤,一个好的算法提升性能关键，互联网关键字有上万，前缀树的性能表现非常好
- * @author xiandafu ,公众号 java系统优化
+ * @author xiandafu@126.com ,公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

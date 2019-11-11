@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 
 /**
  * 替换，正则替换并不慢，主要是因为替换后，需要生成新的字符串，这个会慢。哈哈
- * @author xiandafu ,公众号 java系统优化
+ * @author xiandafu@126.com ,公众号 java系统优化
  *
  */
 @BenchmarkMode(Mode.AverageTime)
