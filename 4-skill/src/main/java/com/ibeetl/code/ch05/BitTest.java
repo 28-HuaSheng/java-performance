@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 位运算，不过最好兼顾代码可读性
- * @author xiandafu ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 5)

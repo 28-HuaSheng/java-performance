@@ -5,7 +5,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 同JavaRelectTool，缓存了Method
+ * 同{@code JavaRelectTool}，缓存了Method
+ * @author 公众号 java系统优化
  */
 public class CachedJavaRelectTool implements ReflectTool {
 

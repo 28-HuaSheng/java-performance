@@ -4,6 +4,9 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
+/** jdk7的办法，貌似不行啊
+ * @author 公众号 java系统优化
+ */
 public class MethodHandleTool implements  ReflectTool {
 
   MethodHandle handle = null;

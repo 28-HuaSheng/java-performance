@@ -5,7 +5,7 @@ import org.junit.Test;
 
 /**
  * 所有的jmh测试，都应该写一个单元测试，保证功能正确先
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 public class InLineTestJunit {
   @Test

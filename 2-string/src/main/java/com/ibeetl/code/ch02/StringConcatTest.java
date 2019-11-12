@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 一个颠覆很多人看法的测试，+ 拼接字符串居然最快。如果使用StringBuilder，符合使用方式，也能非常快。
  * 否则，就慢不少了。
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

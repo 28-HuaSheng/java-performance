@@ -9,7 +9,7 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.util.concurrent.TimeUnit;
 /**
  * 一个演示使用local变量带来的性能略微提升
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 5)

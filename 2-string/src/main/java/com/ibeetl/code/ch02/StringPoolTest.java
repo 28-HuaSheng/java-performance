@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 演示了一个过时的intern方法，intern本意用来节约内存，复用字符串，但性能呢很慢，
  * JDK 提供了新的复用字符串的办法
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

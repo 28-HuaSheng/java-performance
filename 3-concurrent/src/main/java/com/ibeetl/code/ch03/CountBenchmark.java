@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * synchronzied 最好别采用，使用并发包下提供的lock或者其他类
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 10)

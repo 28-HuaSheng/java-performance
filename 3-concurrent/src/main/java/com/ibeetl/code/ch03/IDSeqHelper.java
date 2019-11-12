@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 演示了不加锁操作的计数{@code IDSeqHelper}会出现各种问题，
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 public class IDSeqHelper {
 	static  int a = 0;

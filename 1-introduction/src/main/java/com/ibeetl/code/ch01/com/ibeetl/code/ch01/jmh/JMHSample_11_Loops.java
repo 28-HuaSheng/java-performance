@@ -9,7 +9,7 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.util.concurrent.TimeUnit;
 /**
  * 这是官网提供的不要在jmh里用上循环，因为jit会优化循环，我把关键英语翻译了一下
- * @author xiandafu@126.com
+ * @author 公众号 java系统优化
  * @see  http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/
  */
 @State(Scope.Thread)

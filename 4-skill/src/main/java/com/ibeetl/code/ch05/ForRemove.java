@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 循环合并，创建for循环耗时，for循环过多也耗时，可以避免for循环（比如为空，或者集合只有一个元素）
  * 或者合并循环
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

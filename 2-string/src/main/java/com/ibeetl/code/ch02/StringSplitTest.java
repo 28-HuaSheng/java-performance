@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 字符串分割
- * @author xiandafu@126.com
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

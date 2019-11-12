@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  * 参考 {@code ForDeadCodeTest},循环嵌套
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 public class ForTest {
   static int[] array = new int[]{0,1,2,3,4,5,6,7,8,9};

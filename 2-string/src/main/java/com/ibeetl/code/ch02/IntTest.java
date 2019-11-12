@@ -13,7 +13,7 @@ import java.util.stream.IntStream;
 
 /**
  * 封箱和装箱测试,stream 操作不一定快啊，不过容易阅读和编写是优势
- * @author xiandafu ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

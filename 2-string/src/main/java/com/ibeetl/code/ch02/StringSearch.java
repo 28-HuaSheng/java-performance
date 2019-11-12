@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 
 /**
  * 字符串搜索演示，当然，还有很多第三方库，比如apache common lang也不错
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

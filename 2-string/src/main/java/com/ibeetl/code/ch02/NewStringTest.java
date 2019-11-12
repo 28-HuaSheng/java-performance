@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 了解一下构造String的代码，分布式&微服务系统里，通过byte[] 构造String占了消耗的大量CPU
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

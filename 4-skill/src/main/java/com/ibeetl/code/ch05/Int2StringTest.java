@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 一个int转string的优化例子
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 3)

@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 验证try catch 代价
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 10)

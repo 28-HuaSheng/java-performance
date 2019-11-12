@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 预先编码提升性能，微服务里，这种调用还是非常耗时
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

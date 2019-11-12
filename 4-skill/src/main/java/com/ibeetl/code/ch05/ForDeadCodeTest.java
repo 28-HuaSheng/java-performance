@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 关于一个过时优化：“嵌套循环外小内大性能好“，起始都一样，用hole.consume可以验证
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 5)

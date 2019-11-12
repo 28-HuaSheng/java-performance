@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 /**
  * 日期格式化高性能的正确姿势
- * @author xiandafu@126.com ,公众号 java系统优化
+ * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 5)
