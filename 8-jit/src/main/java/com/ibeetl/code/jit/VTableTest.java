@@ -1,5 +1,9 @@
 package com.ibeetl.code.jit;
 
+/**
+ * 虚方法调用观察，可以使用{@code HellWorld} 例子的虚拟机参数
+ * @author  公众号 java系统优化
+ */
 public class VTableTest {
   public static void main(String[] args) throws Exception{
 

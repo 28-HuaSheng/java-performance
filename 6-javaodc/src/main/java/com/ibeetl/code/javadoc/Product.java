@@ -14,6 +14,7 @@ package com.ibeetl.code.javadoc;
  *     }
  *}
  * </pre>
+ * @author 公众号 java系统优化
  */
 public class Product {
   /**

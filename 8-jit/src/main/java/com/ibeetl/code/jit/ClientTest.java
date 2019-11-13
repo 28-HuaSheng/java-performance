@@ -8,6 +8,10 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 解释执行和编译执行的区别
+ * @author  公众号 java系统优化
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
@@ -18,6 +22,10 @@ public class ClientTest {
 
 	int x=0,y=0;
 
+	/**
+	 * 解释执行
+	 * @return
+	 */
     @Benchmark
 	@Fork(value=1,jvmArgsAppend="-Xint")
 	@CompilerControl(CompilerControl.Mode.DONT_INLINE)
@@ -26,7 +34,10 @@ public class ClientTest {
     }
 
 
-
+	/**
+	 * 没有-Xint,都是编译执行
+	 * @return
+	 */
 	@Benchmark
 	@Fork(value=1)
 	public  int  machinecode(){

@@ -11,153 +11,157 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.concurrent.*;
 
+/**
+ * Caffeine 使用测试Caffeine 使用测试
+ *
+ * @author 公众号 java系统优化
+ */
 public class CaffeineApplicationTests {
-SkuInfoService service = new SkuInfoService();
-ExecutorService pool = Executors.newCachedThreadPool();
-public static void main(String[] args){
-	CaffeineApplicationTests test = new CaffeineApplicationTests();
-	test.evictByReadTime();
-}
+
+    SkuInfoService service = new SkuInfoService();
+
+    ExecutorService pool = Executors.newCachedThreadPool();
+
+    public static void main(String[] args) {
+        CaffeineApplicationTests test = new CaffeineApplicationTests();
+        test.evictByReadTime();
+    }
 
 
+    /**
+     * 手动填充
+     */
+    public void manualLoads() {
+        Cache<String, SkuInfo> cache = Caffeine.newBuilder()
+                .expireAfterWrite(1, TimeUnit.MINUTES)
+                .maximumSize(100)
+                .build();
+        String key = "11757834";
+        // 如果缓存中存在key对应的数据，则返回对应数据；否则返回null
+        SkuInfo skuInfo = cache.getIfPresent(key);
+        System.out.println(skuInfo);
+        skuInfo = new SkuInfo(key);
+        cache.put(key, skuInfo);
+        skuInfo = cache.getIfPresent(key);
+        System.out.println(skuInfo);
+        cache.invalidate(key);
+        skuInfo = cache.get(key, k -> service.query(k));
+        System.out.println(skuInfo);
+
+    }
+
+    /**
+     * 同步载入
+     */
+    public void synchronizeLoading() {
+        LoadingCache<String, SkuInfo> cache = Caffeine.newBuilder()
+                .maximumSize(2)
+                .expireAfterWrite(1, TimeUnit.MINUTES)
+                .build(k -> service.query(k));
+
+        String key = "11757834";
+        SkuInfo skuInfo = cache.get(key);
+        System.out.println(skuInfo);
+
+    }
+
+    /**
+     * 异步载入
+     */
+    public void asyncManual() {
+        AsyncCache<String, SkuInfo> cache = Caffeine.newBuilder()
+                .maximumSize(100)
+                .expireAfterWrite(1, TimeUnit.MINUTES)
+                .buildAsync();
+        String key = "11757834";
+        CompletableFuture<SkuInfo> completableFuture = cache.get(key, k -> service.query(k));
+        completableFuture.thenAccept(skuInfo -> {
+            System.out.println(skuInfo);
+            ;
+        });
+    }
+
+    /**
+     * 异步自动载入
+     */
+    public void asyncLoading() {
+        AsyncLoadingCache<String, SkuInfo> cache = Caffeine.newBuilder()
+                .maximumSize(100)
+                .expireAfterWrite(1, TimeUnit.MINUTES)
+                .executor(pool)
+                .buildAsync(k -> service.query(k));
+
+        String key = "11757834";
+
+        CompletableFuture<SkuInfo> completableFuture = cache.get(key);
+        completableFuture.thenAccept(skuInfo -> {
+            System.out.println(skuInfo);
+        });
 
 
-/**
- * 手动填充
- */
-public void manualLoads() {
-	Cache<String, SkuInfo> cache = Caffeine.newBuilder()
-											 .expireAfterWrite(1, TimeUnit.MINUTES)
-											 .maximumSize(100)
-											 .build();
-	String key = "11757834";
-	// 如果缓存中存在key对应的数据，则返回对应数据；否则返回null
-	SkuInfo skuInfo = cache.getIfPresent(key);
-	System.out.println(skuInfo);
-	skuInfo = new SkuInfo(key);
-	cache.put(key, skuInfo);
-	skuInfo = cache.getIfPresent(key);
-	System.out.println(skuInfo);
-	cache.invalidate(key);
-	skuInfo = cache.get(key, k -> service.query(k));
-	System.out.println(skuInfo);
+    }
 
-}
-
-/**
- * 同步载入
- */
-public void synchronizeLoading() {
-	LoadingCache<String, SkuInfo> cache = Caffeine.newBuilder()
-													.maximumSize(2)
-													.expireAfterWrite(1, TimeUnit.MINUTES)
-													.build( k -> service.query(k));
-
-	String key = "11757834";
-	SkuInfo skuInfo = cache.get(key);
-	System.out.println(skuInfo);
-
-}
-
-/**
- * 异步载入
- */
-public void asyncManual() {
-	AsyncCache<String, SkuInfo> cache = Caffeine.newBuilder()
-												  .maximumSize(100)
-												  .expireAfterWrite(1, TimeUnit.MINUTES)
-												  .buildAsync();
-	String key = "11757834";
-	CompletableFuture<SkuInfo> completableFuture = cache.get(key,k -> service.query(k));
-	completableFuture.thenAccept(skuInfo -> {
-		System.out.println(skuInfo);;
-	});
-}
-
-/**
- * 异步自动载入
- */
-public void asyncLoading() {
-	AsyncLoadingCache<String, SkuInfo> cache = Caffeine.newBuilder()
-		.maximumSize(100)
-		.expireAfterWrite(1, TimeUnit.MINUTES)
-		.executor(pool)
-		.buildAsync(k -> service.query(k));
-
-	String key = "11757834";
-
-	CompletableFuture<SkuInfo> completableFuture = cache.get(key);
-	completableFuture.thenAccept(skuInfo -> {
-		System.out.println(skuInfo);
-	});
+    public void evictByNum1() {
+        LoadingCache<String, SkuInfo> cache = Caffeine.newBuilder()
+                .maximumSize(2)
+                .build(k -> service.query(k));
 
 
+        System.out.println(cache.get("A"));
+        System.out.println(cache.get("C"));
+        System.out.println(cache.get("D"));
+        System.out.println(cache.get("E"));
+
+        cache.cleanUp();
+        System.out.println(cache.estimatedSize());
+        System.out.println(cache.asMap());
+    }
+
+    /**
+     * 淘汰：基于权重值的大小策略。在驱逐时，不考虑权重值
+     */
+    public void evictByNum2() {
+        LoadingCache<String, SkuInfo> cache = Caffeine.newBuilder()
+                .maximumWeight(5)//最大权重10
+                .weigher((k, v) -> ((SkuInfo) v).getKey().length())//一个值的权重计算方法
+                .build(k -> service.query(k));
+
+        System.out.println(cache.get("a"));
+        System.out.println(cache.get("abc"));
+        System.out.println(cache.get("ef"));
 
 
-}
+        cache.cleanUp();
+        System.out.println(cache.estimatedSize());
+        System.out.println(cache.asMap());
+    }
 
-	public void evictByNum1() {
-		LoadingCache<String, SkuInfo> cache = Caffeine.newBuilder()
-				                                        .maximumSize(2)
-				                                        .build(k -> service.query(k));
-
-
-
-		System.out.println(cache.get("A"));
-		System.out.println(cache.get("C"));
-		System.out.println(cache.get("D"));
-		System.out.println(cache.get("E"));
-
-		cache.cleanUp();
-		System.out.println(cache.estimatedSize());
-		System.out.println(cache.asMap());
-	}
-
-	/**
-	 * 淘汰：基于权重值的大小策略。在驱逐时，不考虑权重值
-	 */
-	public void evictByNum2() {
-		LoadingCache<String, SkuInfo> cache = Caffeine.newBuilder()
-				                                        .maximumWeight(5)//最大权重10
-				                                        .weigher((k, v) -> ((SkuInfo) v).getKey().length() )//一个值的权重计算方法
-				                                        .build(k -> service.query(k));
-
-		System.out.println(cache.get("a"));
-		System.out.println(cache.get("abc"));
-		System.out.println(cache.get("ef"));
+    public int getWeight(SkuInfo info) {
+        return info.getKey().length();
+    }
 
 
-		cache.cleanUp();
-		System.out.println(cache.estimatedSize());
-		System.out.println(cache.asMap());
-	}
-
-	public int getWeight(SkuInfo info){
-		return info.getKey().length();
-	}
-
-
-	/**
-	 * 回收：基于访问时间策略
-	 */
-	public void evictByReadTime() {
-		// Guava's testlib
-		FakeTicker ticker = new FakeTicker();
-		LoadingCache<String, SkuInfo> cache = Caffeine.newBuilder()
-				                                        .expireAfterAccess(2, TimeUnit.SECONDS)
-				                                        .ticker(ticker::read)
-				.maximumSize(3)
-				                                        .build(k -> service.query(k));
-		cache.get("A");
-		cache.get("B");
-		ticker.advance(5, TimeUnit.SECONDS);
-		System.out.println(cache.asMap());
-		cache.get("A");
-		//调用下面代码，时间总共过了13秒，B未能有人访问，将被清除
-		ticker.advance(8, TimeUnit.SECONDS);
-		cache.cleanUp();
-		System.out.println(cache.asMap());
-	}
+    /**
+     * 回收：基于访问时间策略
+     */
+    public void evictByReadTime() {
+        // Guava's testlib
+        FakeTicker ticker = new FakeTicker();
+        LoadingCache<String, SkuInfo> cache = Caffeine.newBuilder()
+                .expireAfterAccess(2, TimeUnit.SECONDS)
+                .ticker(ticker::read)
+                .maximumSize(3)
+                .build(k -> service.query(k));
+        cache.get("A");
+        cache.get("B");
+        ticker.advance(5, TimeUnit.SECONDS);
+        System.out.println(cache.asMap());
+        cache.get("A");
+        //调用下面代码，时间总共过了13秒，B未能有人访问，将被清除
+        ticker.advance(8, TimeUnit.SECONDS);
+        cache.cleanUp();
+        System.out.println(cache.asMap());
+    }
 
 
 //

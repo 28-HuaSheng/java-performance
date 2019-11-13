@@ -16,7 +16,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
+/**
+ * 一个模板引擎使用示例
+ * @author 公众号 java系统优化
+ */
 public class BeetlHelper {
   private BeetlHelper(){
 
@@ -42,7 +45,7 @@ public class BeetlHelper {
     cfg.setStatementEnd(null);
     cfg.setPlaceholderStart("${");
     cfg.setPlaceholderEnd("}");
-    cfg.initOther();
+
 
     gt = new GroupTemplate(resourceLoader, cfg);
     //扩展引擎

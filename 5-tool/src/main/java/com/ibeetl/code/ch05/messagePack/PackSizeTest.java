@@ -7,6 +7,10 @@ import org.msgpack.core.MessageBufferPacker;
 import java.io.IOException;
 import java.util.Date;
 
+/**
+ * msg pack 测试
+ * @author 公众号 java系统优化
+ */
 public class PackSizeTest {
 	public static void main(String[] args) throws IOException {
 		Product product = getProudct();

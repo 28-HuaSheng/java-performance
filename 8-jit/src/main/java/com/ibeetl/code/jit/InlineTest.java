@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 内联和不内联的区别
+ * @author  公众号 java系统优化
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
@@ -20,11 +24,11 @@ import java.util.concurrent.TimeUnit;
 public class InlineTest {
 
 	int x=0,y=0;
-//    @Benchmark
-//	@CompilerControl(CompilerControl.Mode.DONT_INLINE)
-//    public  int   add(){
-//        return dataAdd(x,y);
-//    }
+    @Benchmark
+	@CompilerControl(CompilerControl.Mode.DONT_INLINE)
+    public  int   add(){
+        return dataAdd(x,y);
+    }
 
     @Benchmark
 	@CompilerControl(CompilerControl.Mode.PRINT)

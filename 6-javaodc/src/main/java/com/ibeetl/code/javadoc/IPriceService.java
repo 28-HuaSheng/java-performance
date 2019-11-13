@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 /**
  *  价格调用接口
+ *  @author 公众号 java系统优化
  */
 public interface IPriceService {
   /**

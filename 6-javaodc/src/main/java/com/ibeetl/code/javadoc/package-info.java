@@ -5,6 +5,6 @@
  * @see com.ibeetl.code.javadoc.Product
  * @see com.ibeetl.code.javadoc.ProductService
  * @see com.ibeetl.code.javadoc.RpcPriceService
- * @author  xiandafu
+ * @author 公众号 java系统优化
  */
 package com.ibeetl.code.javadoc;

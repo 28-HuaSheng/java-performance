@@ -1,5 +1,9 @@
 package com.ibeetl.code.style;
 
+/**
+ * 比较长的字符串，最后自己格式化，不要依赖于IDE
+ * @author 公众号 java系统优化
+ */
 public class FormatTest {
   private Integer id;
   private String name;

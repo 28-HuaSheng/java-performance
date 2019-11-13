@@ -8,6 +8,11 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 虚拟机会对方法进行优化，尽量不使用虚方法调用，然后，如果存在，则退出优化，可以使用
+ *
+ * @author  公众号 java系统优化
+ */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)
 @Measurement(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
@@ -24,7 +29,7 @@ public class VirtualCallTest {
 	int count = 0;
 
     @Benchmark
-//	@Fork(value=1,jvmArgsAppend = "-XX:+PrintCompilation")
+	@Fork(value=1,jvmArgsAppend = "-XX:+PrintCompilation") //观察虚方法调用优化
 	public  int  call(){
 		return justCall();
 

@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/** 各种克隆方法，从jvm缓存中取出的对象需要克隆才能任意使用
+ * 那种克隆方法快，维护简单？
+ * @author 公众号 java系统优化
+ */
 public class CloneUtil {
 
   DepartmentMapper mapper = Selma.builder(DepartmentMapper.class).build();

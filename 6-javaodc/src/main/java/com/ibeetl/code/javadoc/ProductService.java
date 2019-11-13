@@ -3,6 +3,7 @@ package com.ibeetl.code.javadoc;
 /**
  * 产品服务类，用于获取者{@link Product 产品}的基本信息
  * @see Product
+ * @author 公众号 java系统优化
  */
 public class ProductService {
 

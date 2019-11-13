@@ -3,7 +3,10 @@ package com.ibeetl.code.ch05.beetl;
 import org.beetl.core.Context;
 import org.beetl.core.exception.BeetlException;
 import org.beetl.core.statement.*;
-
+/**
+ * 设置循环次数不超过一定次数
+ * @author 公众号 java系统优化
+ */
 public class MyWhileStatement extends WhileStatement {
 
   public MyWhileStatement(Expression exp, Statement whileBody, GrammarToken token) {
