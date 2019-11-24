@@ -9,7 +9,11 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 位运算，不过最好兼顾代码可读性
+ * 位运算，不过最好兼顾代码可读性，比如
+ * <pre>
+ *  q = (i * 52429) >>> (16+3);
+ * </pre>
+ * 其实就是q=i*0.1000000003,这个代码来自JDK Integer.toString
  * @author 公众号 java系统优化
  */
 @BenchmarkMode(Mode.AverageTime)
