@@ -47,6 +47,13 @@ public class DateFormatTest {
     return str;
   }
 
+  @Benchmark
+  public String formatByClone(){
+
+    String str = DateUtil.formatDate(date);
+    return str;
+  }
+
 
 
   public static void main(String[] args) throws RunnerException {
@@ -56,6 +63,7 @@ public class DateFormatTest {
       .build();
     new Runner(opt).run();
   }
+
 
   static class CommonUtil{
     private static ThreadLocal<SimpleDateFormat> threadlocal = new ThreadLocal<SimpleDateFormat>(){
@@ -72,6 +80,15 @@ public class DateFormatTest {
 
     private static SimpleDateFormat getDateFormat() {
       return threadlocal.get();
+    }
+  }
+
+
+  static class DateUtil{
+    static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    public  static String formatDate(Date d){
+      SimpleDateFormat newSdf = (SimpleDateFormat)sdf.clone();
+      return newSdf.format(d);
     }
   }
 
