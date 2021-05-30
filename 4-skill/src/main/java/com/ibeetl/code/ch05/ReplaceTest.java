@@ -19,78 +19,97 @@ import java.util.concurrent.TimeUnit;
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @State(Scope.Benchmark)
 public class ReplaceTest {
-	char[] value = new char[0];
-	char oldChar = 'e';
-	char newChar ='t';
+
+	String str = "hello,this is effective java code";
 
     @Benchmark
     public char[] replaceByGetField() {
-		int len = value.length;
-		int i = -1;
-
-		while (++i < len) {
-			if (value[i] == oldChar) {
-				break;
-			}
-		}
-		if (i < len) {
-			char buf[] = new char[len];
-			for (int j = 0; j < i; j++) {
-				buf[j] = value[j];
-			}
-			while (i < len) {
-				char c = value[i];
-				buf[i] = (c == oldChar) ? newChar : c;
-				i++;
-			}
-			return buf;
-		}
-
-		return new char[0];
+		return new ReplaceByGetField(str.toCharArray()).replace();
 
     }
-
-
 
 
     @Benchmark
     public char[] replaceByLocal() {
-		int len = value.length;
-		int i = -1;
-		char[] val = value; /* avoid getfield opcode */
-
-		while (++i < len) {
-			if (val[i] == oldChar) {
-				break;
-			}
-		}
-		if (i < len) {
-			char buf[] = new char[len];
-			for (int j = 0; j < i; j++) {
-				buf[j] = val[j];
-			}
-			while (i < len) {
-				char c = val[i];
-				buf[i] = (c == oldChar) ? newChar : c;
-				i++;
-			}
-			return buf;
-		}
-
-		return new char[0];
+		return new ReplaceByLocal(str.toCharArray()).replace();
 
     }
 
-    @Setup
-    public void init(){
-        String str = "hello,this is effective java code";
-        StringBuilder sb = new StringBuilder();
-        sb.append(str);
-        this.value = sb.toString().toCharArray();
+
+	static class ReplaceByLocal{
+		char[] value = new char[0];
+		char oldChar = 'e';
+		char newChar ='t';
+		public ReplaceByLocal(char[] value){
+			this.value = value;
+		}
+
+		public char[] replace(){
+			int len = value.length;
+			int i = -1;
+			char[] val = value; /* avoid getfield opcode */
+
+			while (++i < len) {
+				if (val[i] == oldChar) {
+					break;
+				}
+			}
+			if (i < len) {
+				char buf[] = new char[len];
+				for (int j = 0; j < i; j++) {
+					buf[j] = val[j];
+				}
+				while (i < len) {
+					char c = val[i];
+					buf[i] = (c == oldChar) ? newChar : c;
+					i++;
+				}
+				return buf;
+			}
+
+			return new char[0];
+		}
+
+	}
 
 
+    static class ReplaceByGetField{
+		char[] value = new char[0];
+		char oldChar = 'e';
+		char newChar ='t';
+		public ReplaceByGetField(char[] value){
+			this.value = value;
+		}
 
-    }
+
+		public char[] replace(){
+			int len = value.length;
+			int i = -1;
+
+			while (++i < len) {
+				if (value[i] == oldChar) {
+					break;
+				}
+			}
+			if (i < len) {
+				char buf[] = new char[len];
+				for (int j = 0; j < i; j++) {
+					buf[j] = value[j];
+				}
+				while (i < len) {
+					char c = value[i];
+					buf[i] = (c == oldChar) ? newChar : c;
+					i++;
+				}
+				return buf;
+			}
+
+			return new char[0];
+		}
+
+	}
+
+
 
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
