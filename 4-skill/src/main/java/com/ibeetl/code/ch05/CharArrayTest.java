@@ -21,7 +21,6 @@ import java.util.concurrent.TimeUnit;
 public class CharArrayTest {
 	char[] array = new char[0];
 
-
     @Benchmark
     public int testGetField() {
         int count = 0;
@@ -55,6 +54,16 @@ public class CharArrayTest {
     public void init(){
         String str = "hello,this is effective java code";
         StringBuilder sb = new StringBuilder();
+        sb.append(str);
+        sb.append(str);
+        sb.append(str);
+        sb.append(str);
+        sb.append(str);
+        sb.append(str);
+        sb.append(str);
+        sb.append(str);
+        sb.append(str);
+        sb.append(str);
         sb.append(str);
         this.array = sb.toString().toCharArray();
 

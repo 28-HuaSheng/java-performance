@@ -35,7 +35,9 @@ public class ReplaceTest {
 
     }
 
-
+	/**
+	 * ReplaceByLocal和ReplaceByGetField 代码几乎一样，不同地方在于ReplaceByLocal使用栈变量
+	 */
 	static class ReplaceByLocal{
 		char[] value = new char[0];
 		char oldChar = 'e';
