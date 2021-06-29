@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 @State(Scope.Benchmark)
 public class StringSplitTest {
 
-  String str = "hello,world";
+  String str = "hello水电费水电费,world,world,world,world,world";
 
 
   @Benchmark
