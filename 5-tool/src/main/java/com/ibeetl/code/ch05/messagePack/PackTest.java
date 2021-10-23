@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.msgpack.MessagePack;
 import org.msgpack.core.MessageBufferPacker;
 import org.msgpack.core.MessagePacker;
+import org.msgpack.jackson.dataformat.MessagePackFactory;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
@@ -32,6 +33,7 @@ public class PackTest {
 	Product p = null;
 	MessagePack pack = new MessagePack();
 	ObjectMapper mapper = new ObjectMapper();
+	ObjectMapper messagePackMapper = new ObjectMapper(new MessagePackFactory());
 
 
 	@Benchmark
@@ -45,19 +47,22 @@ public class PackTest {
 	}
 	@Benchmark
 	public byte[] jackson() throws Exception {
-		String json =  mapper.writeValueAsString(p);
-		return json.getBytes("UTF-8");
+		return   mapper.writeValueAsBytes(p);
+	}
+
+	@Benchmark
+	public byte[] packWithJackson() throws IOException {
+		byte[] bs =  messagePackMapper.writeValueAsBytes(p);
+		return bs;
 	}
 
 	private byte[] corePackProudct(Product p) throws IOException{
-
 		MessageBufferPacker packer = org.msgpack.core.MessagePack.newDefaultBufferPacker();
 		if(p.getDel()!=null){
 			packer.packBoolean(p.getDel());
 		}else{
 			packer.packNil();
 		}
-
 		if(p.getCreateTime()!=null){
 			packer.packLong(p.getCreateTime().getTime());
 		}else{

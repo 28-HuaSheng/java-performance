@@ -35,6 +35,8 @@ public class Ch01EmptyCheckTest {
 		AreaBuilder.buildProvinceWithEmptyCheck(orgs);
 	}
 
+
+
 	@Benchmark
 	public void common() {
 		AreaBuilder.buildProvince(orgs);

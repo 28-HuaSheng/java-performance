@@ -34,6 +34,7 @@ public class Ch04BuildCharTest {
 		AreaBuilder.buildProvinceWithChar(orgs);
 	}
 
+
 	@Benchmark
 	public void common() {
 		AreaBuilder.buildProvince(orgs);

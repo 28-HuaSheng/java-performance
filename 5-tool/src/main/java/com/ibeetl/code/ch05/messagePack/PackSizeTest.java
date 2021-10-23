@@ -3,6 +3,7 @@ package com.ibeetl.code.ch05.messagePack;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.msgpack.MessagePack;
 import org.msgpack.core.MessageBufferPacker;
+import org.msgpack.jackson.dataformat.MessagePackFactory;
 
 import java.io.IOException;
 import java.util.Date;
@@ -18,11 +19,15 @@ public class PackSizeTest {
 		MessagePack pack = new MessagePack();
 		ObjectMapper mapper = new ObjectMapper();
 
+		ObjectMapper messagePackMapper = new ObjectMapper(new MessagePackFactory());
+
 		byte[] bs = pack.write(product);
-		byte[] bs1 = packProudct(getProudct());
+		byte[] bs1 = packProudct(product);
+		byte[] bs3 =  messagePackMapper.writeValueAsBytes(product);
 		String str = mapper.writeValueAsString(product);
-		System.out.println("packmessage size = " +bs.length);
-		System.out.println("packmessage1 size = " +bs1.length);
+		System.out.println("autopack size = " +bs.length);
+		System.out.println("pack size = " +bs1.length);
+		System.out.println("jackson pack size = " +bs1.length);
 		System.out.println("jackson size = " +str.getBytes("UTF-8").length);
 
 	}
