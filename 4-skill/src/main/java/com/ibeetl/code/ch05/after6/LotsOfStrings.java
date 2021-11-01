@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 /**
  * 使用虚拟机开关，可以有效节约缓存，同样内容的String(char[])将会复用一个char[]
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 public class LotsOfStrings {
 

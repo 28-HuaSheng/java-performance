@@ -6,7 +6,7 @@ import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 /**
  * hash够快，但也够慢，高性能不用hash，这不仅仅是java，也是其他语言的共识
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 public class ElapsedTime {
 

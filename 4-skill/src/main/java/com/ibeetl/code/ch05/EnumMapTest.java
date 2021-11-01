@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 /**
  * EnumMap 演示
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 3)

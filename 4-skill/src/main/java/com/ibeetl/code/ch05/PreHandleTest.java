@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 /**
  * 一个简单的例子，这种优化很常用
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 5)

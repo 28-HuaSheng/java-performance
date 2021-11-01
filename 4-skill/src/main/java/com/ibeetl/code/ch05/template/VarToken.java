@@ -3,7 +3,7 @@ package com.ibeetl.code.ch05.template;
 import java.io.IOException;
 /**
  * 变量
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 public class VarToken implements Token {
   // 变量在变量表中的索引

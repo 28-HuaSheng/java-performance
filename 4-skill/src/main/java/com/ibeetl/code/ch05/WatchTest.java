@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * hash虽然快，但并不是最快的查找方式，能用数组最好
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 5)

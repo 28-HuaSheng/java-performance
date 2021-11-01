@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 格式化例子，预编译能获得最好的性能
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 10)

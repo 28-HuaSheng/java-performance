@@ -9,7 +9,7 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.util.concurrent.TimeUnit;
 /**
  * swtich 优化
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 @BenchmarkMode(Mode.Throughput)
 @Warmup(iterations = 5)

@@ -3,7 +3,7 @@ package com.ibeetl.code.ch05.reflect;
 import java.lang.reflect.Method;
 /**
  * 常规方法，反射，但随时虚拟机的优化，反射性能越来越好
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 public class JavaRelectTool implements  ReflectTool {
 

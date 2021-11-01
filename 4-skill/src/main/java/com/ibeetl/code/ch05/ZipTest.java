@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  *
  * apache compress 提供更多的压缩，但性能上大部分差不多。
  *
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

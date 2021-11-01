@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 同{@code JavaRelectTool}，缓存了Method
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 public class CachedJavaRelectTool implements ReflectTool {
 

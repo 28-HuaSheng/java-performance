@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 反射调用性能对比，很多java框架都会用到反射，反射性能高低影响了框架性能
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

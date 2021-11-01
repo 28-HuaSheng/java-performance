@@ -3,7 +3,7 @@ package com.ibeetl.code.ch05;
 import java.util.Random;
 /**
  * 非性能相关，验证随机式不随机
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈Java开发
  */
 public class Other {
 	public void test(){
