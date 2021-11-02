@@ -14,7 +14,7 @@ import java.util.concurrent.*;
 /**
  * Caffeine 使用测试Caffeine 使用测试
  *
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈java开发
  */
 public class CaffeineApplicationTests {
 

@@ -12,7 +12,7 @@ import java.util.List;
 
 /** 各种克隆方法，从jvm缓存中取出的对象需要克隆才能任意使用
  * 那种克隆方法快，维护简单？
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈java开发
  */
 public class CloneUtil {
 

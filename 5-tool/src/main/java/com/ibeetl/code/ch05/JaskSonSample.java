@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  * Jackson 作为很多工具的首选序列化工具，除了性能高超外，功能也很强大
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈java开发
  */
 public class JaskSonSample {
 

@@ -5,7 +5,7 @@ import org.beetl.core.exception.BeetlException;
 import org.beetl.core.statement.*;
 /**
  * 设置循环次数不超过一定次数
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈java开发
  */
 public class MyWhileStatement extends WhileStatement {
 

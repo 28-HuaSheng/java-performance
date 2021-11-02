@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  * msg pack 测试
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈java开发
  */
 public class PackSizeTest {
 	public static void main(String[] args) throws IOException {

@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * MessagePack vs Jackson
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈java开发
  */
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 10)

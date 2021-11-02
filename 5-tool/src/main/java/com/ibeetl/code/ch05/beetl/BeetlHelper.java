@@ -18,7 +18,7 @@ import java.util.List;
 
 /**
  * 一个模板引擎使用示例
- * @author 公众号 java系统优化
+ * @author 公众号 闲谈java开发
  */
 public class BeetlHelper {
   private BeetlHelper(){
