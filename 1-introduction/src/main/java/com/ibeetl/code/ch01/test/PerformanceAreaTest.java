@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class PerformaceAreaTest {
+public class PerformanceAreaTest {
     static AreaService areaService = new AreaService();
     static PreferAreaService perferAreaService = new PreferAreaService();
 

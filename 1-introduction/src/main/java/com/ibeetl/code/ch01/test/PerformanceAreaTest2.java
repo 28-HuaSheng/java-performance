@@ -13,9 +13,9 @@ import java.util.concurrent.TimeUnit;
  * jvisualvm的cpu采样，观察性能明细
  * @author xiandafu ,公众号 java系统优化
  */
-public class PerformaceAreaTest2 {
+public class PerformanceAreaTest2 {
     static AreaService areaService = new AreaService();
-    static PreferAreaService perferAreaService = new PreferAreaService();
+    static PreferAreaService preferAreaService = new PreferAreaService();
 
     public static void main(String[] args){
         while(true){
@@ -50,7 +50,7 @@ public class PerformaceAreaTest2 {
     }
     public static void  testObjectKey(int max, List<Area> data){
         for(int i=0;i<max;i++){
-            perferAreaService.buildArea(data);
+            preferAreaService.buildArea(data);
         }
     }
 

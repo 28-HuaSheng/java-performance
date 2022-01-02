@@ -44,9 +44,6 @@ public class CityKey {
 
     @Override
     public int hashCode() {
-        if(hashCode == -1){
-            hashCode =   Objects.hash(provinceId, cityId);
-        }
-        return hashCode;
+       return Objects.hash(provinceId,cityId);
     }
 }
