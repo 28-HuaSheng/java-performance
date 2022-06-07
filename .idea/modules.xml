@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/1-introduction/ch01.iml" filepath="$PROJECT_DIR$/1-introduction/ch01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2-string/ch02.iml" filepath="$PROJECT_DIR$/2-string/ch02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-concurrent/ch04.iml" filepath="$PROJECT_DIR$/3-concurrent/ch04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4-skill/ch04 (1).iml" filepath="$PROJECT_DIR$/4-skill/ch04 (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java-performance.iml" filepath="$PROJECT_DIR$/.idea/java-performance.iml" />
     </modules>
   </component>
